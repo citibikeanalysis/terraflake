@@ -20,7 +20,7 @@ module "source_db" {
 
   database_name        = "${each.value}_DB"
   grant_admin_to_roles = ["${each.value}_ROLE"]
-  schemas              = ["JAFFLE_SHOP", "STRIPE"]
+  schemas              = ["BIKE", "WEATHER"]
   grant_read_to_roles = [
     module.bulk_roles.roles["dev_r"].name,
     module.bulk_roles.roles["prod_r"].name,
