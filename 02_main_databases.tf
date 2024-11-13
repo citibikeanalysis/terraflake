@@ -7,7 +7,6 @@ module "analytics_db" {
   for_each = toset(["PROD"])
 
   database_name        = "${each.value}_DB"
-  schemas              = local.schemas
   grant_admin_to_roles = ["${each.value}_LOAD_ROLE"]
   grant_read_to_roles  = [module.bulk_roles.roles["tableau_r"].name]
 }
@@ -32,7 +31,6 @@ module "dev_db" {
   source = "./modules/application_database"
 
   database_name                = "DEV_DB"
-  schemas                      = local.schemas
   create_application_user      = false
   create_application_warehouse = false
   grant_admin_to_roles = [
