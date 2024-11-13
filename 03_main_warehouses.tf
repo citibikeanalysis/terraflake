@@ -7,7 +7,7 @@ module "bulk_warehouses" {
     prod_w    = { name = "PROD_LOAD_WH" }
     source_w  = { name = "SOURCE_WH" }
   }
-  default_size         = "x-small"
+  default_size         = "medium"
   default_auto_suspend = 60
 }
 
