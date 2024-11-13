@@ -36,6 +36,9 @@ module "dev_db" {
   grant_admin_to_roles = [
     module.bulk_roles.roles["dev_r"].name
   ]
+  grant_read_to_roles = [
+    module.bulk_roles.roles["tableau_r"].name
+  ]
 }
 
 
